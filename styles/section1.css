@@ -1,10 +1,19 @@
 .section-1 {
   position: relative;
   padding-top: 124px;
-  background-image: url("../assets/images/head-bg.png");
+  background-image: url("../assets/images/head-bg-2.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom center;
+
+  @media (max-width: 1366px) {
+    background-image: url("../assets/images/head-bg-1.png");
+  }
+
+  @media (max-width: 568px) {
+    background-image: url("../assets/images/head-bg-mobile.png");
+    background-size: cover;
+  }
 }
 
 .head {
@@ -22,6 +31,7 @@
 
   @media (max-width: 1024px) {
     padding: 36px;
+    background-position: bottom;
   }
 
   @media (max-width: 560px) {
@@ -45,6 +55,16 @@
   width: auto;
   max-width: 542px;
   height: auto;
+
+  @media (max-width: 768px) {
+    margin-bottom: 290px;
+    width: 100%;
+    max-width: inherit;
+  }
+
+  @media (max-width: 568px) {
+    margin-bottom: 290px;
+  }
 }
 
 .section1-title {
@@ -61,6 +81,14 @@
   letter-spacing: 0;
   text-transform: uppercase;
   color: #313131;
+
+  @media (max-width: 1024px) {
+    font-size: 48px;
+  }
+
+  @media (max-width: 568px) {
+    font-size: 36px;
+  }
 }
 
 .section1-title > span {
@@ -82,6 +110,10 @@
   line-height: 23px;
   letter-spacing: 0;
   text-align: center;
+
+  @media (max-width: 568px) {
+    margin-bottom: 32px;
+  }
 }
 
 .section1-buttons {
@@ -90,9 +122,27 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 568px) {
+    margin-bottom: 50px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
 }
 
 .section1-buttons > button {
   width: calc(50% - 8px);
   max-width: calc(50% - 8px);
+
+  @media (max-width: 568px) {
+    width: 100%;
+    max-width: inherit;
+  }
+}
+
+.section1-buttons > button:first-child {
+  @media (max-width: 568px) {
+    margin-bottom: 32px;
+  }
 }
