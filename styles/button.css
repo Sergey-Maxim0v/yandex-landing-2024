@@ -1,0 +1,41 @@
+.button {
+  padding: 20px;
+  height: 72px;
+  border-radius: 66px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Golos Text", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0;
+  text-align: center;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.button-dark {
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
+
+.button-dark:hover {
+  background-color: #fbce51;
+  color: #1f1f1f;
+}
+
+.button-light {
+  background-color: #e6dbcf;
+  border: 2px solid #1f1f1f;
+  color: #1f1f1f;
+}
+
+.button-light:hover {
+  background-color: #1f1f1f;
+  color: #ffffff;
+}

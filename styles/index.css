@@ -3,5 +3,7 @@
 @import "global.css";
 
 /* sections */
+@import "section1.css";
 
 /* elements */
+@import "button.css";

@@ -1,2 +1,25 @@
+body {
+  width: 100%;
+  height: auto;
+}
+
+.page {
+}
+
 .section {
+  width: 100%;
+  padding: 80px calc((100% - 1220px) / 2);
+
+  @media (max-width: 1920px) {
+    padding-left: max(calc((100% - 1220px) / 2), 72px);
+    padding-right: max(calc((100% - 1220px) / 2), 72px);
+  }
+
+  @media (max-width: 1024px) {
+    padding: 36px;
+  }
+
+  @media (max-width: 560px) {
+    padding: 18px;
+  }
 }
