@@ -1,11 +1,27 @@
 .section-3 {
 }
 
-.section3-title-row {
-}
-
 .section3-title {
+  margin-bottom: 54px;
+  display: inline-block;
+
+  @media (max-width: 1024px) {
+    margin-bottom: 134px;
+  }
 }
 
 .section3-title-description {
+  margin-left: 10px;
+  display: inline-block;
+  max-width: 280px;
+
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-transform: none;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    height: 2rem;
+  }
 }

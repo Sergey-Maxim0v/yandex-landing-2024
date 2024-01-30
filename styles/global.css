@@ -25,6 +25,23 @@ body {
   }
 }
 
+.section-title {
+  max-width: min(806px, 100%);
+  font-size: 54px;
+  line-height: 65px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    line-height: 110%;
+  }
+
+  @media (max-width: 568px) {
+    word-break: break-word;
+  }
+}
+
 /* colors */
 .red {
   color: #f54932;

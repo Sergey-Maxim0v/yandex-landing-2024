@@ -1,4 +1,9 @@
 .section-2 {
+  margin-bottom: 200px;
+
+  @media (max-width: 1024px) {
+    margin-bottom: 120px;
+  }
 }
 
 .section2-text {
