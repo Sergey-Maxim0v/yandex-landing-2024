@@ -1,0 +1,47 @@
+.section-2 {
+}
+
+.section2-text {
+  position: relative;
+  padding-right: 458px;
+  font-size: 36px;
+  line-height: 49px;
+  letter-spacing: 0;
+
+  @media (max-width: 1024px) {
+    padding-right: 0;
+  }
+}
+
+.section2-img1 {
+  position: absolute;
+  width: 394px;
+  height: 250px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  border-radius: 50%;
+  object-fit: cover;
+
+  @media (max-width: 1024px) {
+    margin: 24px 0 24px 24px;
+    position: relative;
+    top: inherit;
+    right: inherit;
+    transform: none;
+    float: right;
+  }
+
+  @media (max-width: 768px) {
+    margin: 24px calc((100% - 336px) / 2);
+    width: 336px;
+    height: 212px;
+  }
+
+  @media (max-width: 560px) {
+    margin: 24px 0;
+    width: 100%;
+    max-width: 100%;
+  }
+}

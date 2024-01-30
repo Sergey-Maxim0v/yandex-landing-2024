@@ -4,6 +4,7 @@
 
 /* sections */
 @import "section1.css";
+@import "section2.css";
 
 /* elements */
 @import "button.css";

@@ -23,3 +23,15 @@ body {
     padding: 18px;
   }
 }
+
+/* colors */
+.red {
+  color: #f54932;
+}
+
+/* displays */
+.b-1024 {
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
