@@ -42,6 +42,15 @@ body {
   }
 }
 
+.scroll-hidden {
+  -ms-overflow-style: none; /* IE и Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 /* colors */
 .red {
   color: #f54932;
