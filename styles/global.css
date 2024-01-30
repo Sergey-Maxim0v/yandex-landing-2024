@@ -4,6 +4,7 @@ body {
 }
 
 .page {
+  color: #313131;
 }
 
 .section {
@@ -28,10 +29,43 @@ body {
 .red {
   color: #f54932;
 }
+.blue {
+  color: #3057a2;
+}
 
 /* displays */
-.b-1024 {
+.b-1024-max {
   @media (max-width: 1024px) {
     display: none;
   }
+}
+
+.b-768-max {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.b-768-min {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+/* text */
+.crossedout {
+  margin-right: 12px;
+  position: relative;
+  display: inline-block;
+}
+
+.crossedout:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 2px;
+  background-color: #f54932;
 }
