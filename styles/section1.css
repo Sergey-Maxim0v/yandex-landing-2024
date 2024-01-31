@@ -34,7 +34,7 @@
     background-position: bottom;
   }
 
-  @media (max-width: 560px) {
+  @media (max-width: 568px) {
     padding: 18px;
   }
 }

@@ -6,9 +6,11 @@
 @import "section1.css";
 @import "section2.css";
 @import "section3.css";
+@import "section4.css";
 
 /* elements */
 @import "button.css";
 @import "ticker.css";
 @import "table.css";
 @import "slider3.css";
+@import "slider4.css";

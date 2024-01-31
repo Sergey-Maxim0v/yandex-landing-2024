@@ -19,6 +19,23 @@
     border-color 0.2s;
 }
 
+.button-small {
+  padding: 12px;
+  height: 35px;
+  line-height: 19px;
+}
+
+.button-blue {
+  background-color: transparent;
+  border: 1px solid #3057a2;
+  color: #3057a2;
+}
+
+.button-blue:hover {
+  background-color: #3057a2;
+  color: #ffffff;
+}
+
 .button-dark {
   background-color: #1f1f1f;
   color: #ffffff;

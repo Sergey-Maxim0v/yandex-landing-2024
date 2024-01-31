@@ -1,5 +1,10 @@
 .section-3 {
   overflow: hidden;
+  margin-bottom: 200px;
+
+  @media (max-width: 1024px) {
+    margin-bottom: 120px;
+  }
 }
 
 .section3-title {

@@ -68,7 +68,7 @@
     height: 212px;
   }
 
-  @media (max-width: 560px) {
+  @media (max-width: 568px) {
     margin: 24px 0;
     width: 100%;
     max-width: 100%;
