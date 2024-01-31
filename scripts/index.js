@@ -1,3 +1,3 @@
-import slider3Control from "/scripts/slider3.js";
+import slider3Control from "./slider3.js";
 
 slider3Control();

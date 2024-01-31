@@ -1,4 +1,4 @@
-import onIntersection from "/scripts/onIntersection.js";
+import onIntersection from "./onIntersection.js";
 
 const slider = document.querySelector(`[data-slider3]`);
 const slideList = slider.getElementsByClassName("slider3-slide");
