@@ -60,7 +60,11 @@ body {
 }
 
 /* displays */
-.n-1024-max {
+.page .none {
+  display: none;
+}
+
+.page .n-1024-max {
   @media (max-width: 1024px) {
     display: none;
   }
