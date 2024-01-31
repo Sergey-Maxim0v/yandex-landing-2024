@@ -15,6 +15,7 @@
 
 .slider4-controls span {
   margin-right: 2px;
+  width: 10px;
   display: inline-block;
   opacity: 0.6;
 }
@@ -56,25 +57,25 @@
   flex-wrap: nowrap;
   align-items: stretch;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .slider4-slide {
-  margin-right: 20px;
-  padding: 20px 0;
-  width: calc((100% - 40px) / 3);
-  min-width: calc((100% - 40px) / 3);
+  padding: 20px 10px;
+  width: calc(100% / 3);
+  min-width: calc(100% / 3);
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (max-width: 1024px) {
-    width: calc((100% - 20px) / 2);
-    min-width: calc((100% - 20px) / 2);
+    width: 50%;
+    min-width: 50%;
   }
 
   @media (max-width: 568px) {
-    width: calc((100% - 20px) / 2);
-    min-width: calc((100% - 20px) / 2);
+    width: 100%;
+    min-width: 100%;
   }
 
   @media (max-width: 568px) {

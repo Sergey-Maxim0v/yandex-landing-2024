@@ -1,8 +1,8 @@
 .section-2 {
-  margin-bottom: 200px;
+  margin-bottom: 120px;
 
   @media (max-width: 1024px) {
-    margin-bottom: 120px;
+    margin-bottom: 102px;
   }
 }
 

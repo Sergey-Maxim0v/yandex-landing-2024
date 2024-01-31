@@ -17,9 +17,9 @@ const onIntersection = ({
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        visibleCallback();
+        !!visibleCallback && visibleCallback();
       } else {
-        hiddenCallback();
+        !!hiddenCallback && hiddenCallback();
       }
     });
   }, options);
