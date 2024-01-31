@@ -74,10 +74,13 @@
   color: #ffffff;
   background-color: rgba(49, 49, 49, 0.2);
   transition: background-color 0.2s;
+
+  pointer-events: none;
 }
 
 .slider3-slider-button._active {
   background-color: #313131;
+  pointer-events: inherit;
 }
 
 .slider3-slider-left {

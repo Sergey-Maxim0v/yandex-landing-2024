@@ -1,4 +1,7 @@
+import onIntersection from "/scripts/onIntersection.js";
+
 const slider = document.querySelector(`[data-slider3]`);
+const slideList = slider.getElementsByClassName("slider3-slide");
 const leftBtn = document.querySelector(`[data-slider3-left]`);
 const rightBtn = document.querySelector(`[data-slider3-right]`);
 const dotListContainer = document.querySelector(`[data-slide3-dotlist]`);
@@ -42,6 +45,26 @@ const animateDots = () => {
   dotList[activeNum] && dotList[activeNum].classList.add(ACTIVE_CLASSNAME);
 };
 
+const animateBtns = () => {
+  if (!leftBtn || !rightBtn) {
+    return;
+  }
+
+  onIntersection({
+    element: slideList[0],
+    visibleCallback: () => leftBtn.classList.remove(ACTIVE_CLASSNAME),
+    hiddenCallback: () => leftBtn.classList.add(ACTIVE_CLASSNAME),
+    threshold: 0.6,
+  });
+
+  onIntersection({
+    element: slideList[slideList.length - 1],
+    visibleCallback: () => rightBtn.classList.remove(ACTIVE_CLASSNAME),
+    hiddenCallback: () => rightBtn.classList.add(ACTIVE_CLASSNAME),
+    threshold: 0.6,
+  });
+};
+
 const onScroll = (event) => {
   if (!event) {
     return;
@@ -49,6 +72,7 @@ const onScroll = (event) => {
 
   flyPlane();
   animateDots();
+  animateBtns();
 };
 
 const slider3Control = () => {
