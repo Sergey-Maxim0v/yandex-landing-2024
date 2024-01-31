@@ -10,7 +10,7 @@ const PLANE_ACTIVE_CLASSNAME = "_animate";
 let isScroll = false;
 
 const onScroll = (event) => {
-  if (!event || isScroll) {
+  if (!event) {
     return;
   }
 
@@ -18,10 +18,12 @@ const onScroll = (event) => {
 
   plane.classList.add(PLANE_ACTIVE_CLASSNAME);
 
-  setTimeout(() => {
-    plane.classList.contains(PLANE_ACTIVE_CLASSNAME) &&
-      plane.classList.remove(PLANE_ACTIVE_CLASSNAME);
-  }, 1500);
+  setTimeout(
+    () =>
+      plane.classList.contains(PLANE_ACTIVE_CLASSNAME) &&
+      plane.classList.remove(PLANE_ACTIVE_CLASSNAME),
+    1000,
+  );
 
   setTimeout(() => {
     if (isScroll) {
@@ -35,7 +37,7 @@ const slider3Control = () => {
     return;
   }
 
-  slider.addEventListener("scroll", (event) => onScroll(event));
+  slider.addEventListener("scroll", (event) => !isScroll && onScroll(event));
 };
 
 export default slider3Control;
