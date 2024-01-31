@@ -10,7 +10,6 @@ const plane = document.querySelector(`[data-slider3-img]`);
 
 const PLANE_ACTIVE_CLASSNAME = "_animate";
 const ACTIVE_CLASSNAME = "_active";
-const WIDTH_SLIDE = 370;
 
 let isScroll = false;
 
@@ -39,7 +38,8 @@ const animateDots = () => {
   if (!dotList || !dotList.length) return;
 
   const scrollWidth = slider.scrollLeft;
-  const activeNum = Math.floor((scrollWidth + WIDTH_SLIDE / 2) / WIDTH_SLIDE);
+  const slideWidth = slideList[0].getBoundingClientRect().width + 40 ?? 0;
+  const activeNum = Math.floor((scrollWidth + slideWidth / 2) / slideWidth);
 
   dotList.forEach((dot) => dot.classList.remove(ACTIVE_CLASSNAME));
   dotList[activeNum] && dotList[activeNum].classList.add(ACTIVE_CLASSNAME);
@@ -76,15 +76,16 @@ const onScroll = (event) => {
 };
 
 const onClick = (dir) => {
-  if (dir !== 1 && dir !== -1) {
+  if ((dir !== 1 && dir !== -1) || !slideList[0]) {
     return;
   }
   const scrollWidth = slider.scrollLeft;
+  const slideWidth = slideList[0].getBoundingClientRect().width + 40 ?? 0;
 
   if (dir < 0) {
-    slider.scroll(scrollWidth - WIDTH_SLIDE, 0);
+    slider.scroll(scrollWidth - slideWidth, 0);
   } else {
-    slider.scroll(scrollWidth + WIDTH_SLIDE, 0);
+    slider.scroll(scrollWidth + slideWidth, 0);
   }
 };
 
