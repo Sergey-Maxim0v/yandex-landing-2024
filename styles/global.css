@@ -60,19 +60,25 @@ body {
 }
 
 /* displays */
-.b-1024-max {
+.n-1024-max {
   @media (max-width: 1024px) {
     display: none;
   }
 }
 
-.b-768-max {
+.page .n-768-max {
   @media (max-width: 768px) {
     display: none;
   }
 }
 
-.b-768-min {
+.page .n-768-min {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.page .n-769-min {
   @media (min-width: 768px) {
     display: none;
   }
