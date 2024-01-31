@@ -75,12 +75,28 @@ const onScroll = (event) => {
   animateBtns();
 };
 
+const onClick = (dir) => {
+  if (dir !== 1 && dir !== -1) {
+    return;
+  }
+  const scrollWidth = slider.scrollLeft;
+
+  if (dir < 0) {
+    slider.scroll(scrollWidth - WIDTH_SLIDE, 0);
+  } else {
+    slider.scroll(scrollWidth + WIDTH_SLIDE, 0);
+  }
+};
+
 const slider3Control = () => {
-  if (!slider) {
+  if (!slider || !leftBtn || !rightBtn) {
     return;
   }
 
   slider.addEventListener("scroll", (event) => onScroll(event));
+
+  leftBtn.addEventListener("click", () => onClick(-1));
+  rightBtn.addEventListener("click", () => onClick(1));
 };
 
 export default slider3Control;

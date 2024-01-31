@@ -3,6 +3,7 @@
   display: flex;
   align-items: stretch;
   overflow-x: auto;
+  scroll-behavior: smooth;
 }
 
 .slider3-slide {
