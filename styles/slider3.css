@@ -73,6 +73,7 @@
 
   color: #ffffff;
   background-color: rgba(49, 49, 49, 0.2);
+  transition: background-color 0.2s;
 }
 
 .slider3-slider-button._active {
@@ -95,19 +96,18 @@
   display: block;
   margin-right: 6px;
   line-height: 0;
-}
 
-.slider3-slider-dot:last-child {
-  margin-right: 0;
-}
-
-.slider3-slider-dotbutton {
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background-color: rgba(217, 217, 217, 1);
+  transition: background-color 0.2s;
 }
 
-.slider3-slider-dotbutton._active {
+.slider3-slider-dot._active {
   background-color: #313131;
+}
+
+.slider3-slider-dot:last-child {
+  margin-right: 0;
 }
