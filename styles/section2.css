@@ -160,3 +160,7 @@
   line-height: 24px;
   letter-spacing: 0;
 }
+
+.section2-link:hover {
+  text-decoration: underline;
+}
