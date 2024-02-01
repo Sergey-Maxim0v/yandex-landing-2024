@@ -4,25 +4,17 @@ const section2 = document.querySelector(`[data-section2]`);
 const section4 = document.querySelector(`[data-section4]`);
 
 const scrollButtons = () => {
-  const onClick = (dir) => {
-    if (!section2 || !section4) {
-      return;
-    }
+  if (!button4 || !button2 || !section4 || !section2) {
+    return;
+  }
 
-    const scrollSize =
-      dir === 2
-        ? section2.getBoundingClientRect().top
-        : section4.getBoundingClientRect().top;
+  button2.addEventListener("click", () =>
+    section2.scrollIntoView({ behavior: "smooth" }),
+  );
 
-    window.scroll({
-      top: scrollSize ?? 0,
-      left: 0,
-      behavior: "smooth",
-    });
-  };
-
-  button2.addEventListener("click", () => onClick(2));
-  button4.addEventListener("click", () => onClick(4));
+  button4.addEventListener("click", () =>
+    section4.scrollIntoView({ behavior: "smooth" }),
+  );
 };
 
 export default scrollButtons;
