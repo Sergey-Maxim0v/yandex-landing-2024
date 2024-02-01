@@ -10,6 +10,7 @@ class Carousel {
   containerWidth = container?.getBoundingClientRect().width ?? 0;
   slideQuantity = 0;
   visibleIndex = 0;
+  interval = null;
 
   constructor() {
     this.visibleIndex = 0;
@@ -19,6 +20,12 @@ class Carousel {
     this.setSlideQuantity();
     this.writeCounter();
     this.writeLength();
+    this.changeInterval();
+  }
+
+  changeInterval() {
+    this.interval && clearInterval(this.interval);
+    this.interval = setInterval(() => slider4.changeSlides(1), 4000);
   }
 
   serContainerWidth() {
@@ -48,6 +55,7 @@ class Carousel {
     this.setSlideWidth();
     this.serContainerWidth();
     this.writeCounter();
+    this.changeInterval();
   }
 
   setVisibleIndex(dir = 1) {
@@ -62,17 +70,11 @@ class Carousel {
     const increment = this.visibleIndex + this.slideQuantity;
     const decrement = this.visibleIndex - this.slideQuantity;
 
-    // TODO: не корректно работает на лево
-
     if (dir < 0 && decrement > 0) {
       this.visibleIndex = decrement;
     }
 
-    if (dir < 0 && decrement === 0 && this.slideQuantity > 1) {
-      this.visibleIndex = slideList.length - this.slideQuantity;
-    }
-
-    if (dir < 0 && decrement === 0 && this.slideQuantity <= 1) {
+    if (dir < 0 && decrement === 0) {
       this.visibleIndex = 0;
     }
 
@@ -84,17 +86,15 @@ class Carousel {
       this.visibleIndex = increment;
     }
 
-    if (dir > 0 && increment === slideList.length && this.slideQuantity <= 1) {
-      this.visibleIndex = increment;
-    }
-
-    if (dir > 0 && increment === slideList.length && this.slideQuantity > 1) {
+    if (dir > 0 && increment === slideList.length) {
       this.visibleIndex = 0;
     }
 
     if (dir > 0 && increment > slideList.length) {
       this.visibleIndex = 0;
     }
+
+    setTimeout(() => this.writeCounter(), 300);
   }
 
   scrollToStart() {
@@ -111,6 +111,7 @@ class Carousel {
       return;
     }
 
+    this.changeInterval();
     this.setVisibleIndex(dir);
     container.scroll(this.visibleIndex * this.slideWidth, 0);
   }
@@ -118,33 +119,19 @@ class Carousel {
 
 const slider4 = new Carousel();
 
-const slider4Control = async () => {
-  //   TODO: все в класс запихать и создать на месте новую карусель
+const slider4Control = () => {
   if (!container || !slideList || !slideList.length || !length || !counter) {
     return;
   }
 
-  let interval = undefined;
+  const onClick = (dir) => slider4.changeSlides(dir);
 
-  const changeInterval = () => {
-    interval = setInterval(() => slider4.changeSlides(1), 4000);
-  };
+  window.addEventListener("resize", () => slider4.onResize());
 
-  const onClick = (dir) => {
-    clearInterval(interval);
-    slider4.changeSlides(dir);
-    changeInterval();
-  };
-
-  window.addEventListener("resize", () => {
-    // TODO: поправить чистку интервала
-    changeInterval();
-    slider4.onResize();
-  });
   leftBtn.addEventListener("click", () => onClick(-1));
   rightBtn.addEventListener("click", () => onClick(1));
 
-  changeInterval();
+  slider4.changeInterval();
 };
 
 export default slider4Control;
