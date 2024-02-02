@@ -1,6 +1,5 @@
 <h1 align="center">Клуб четырех коней</h1>
-<h2 align="center">Яндекс лендинг</h2>
-<h2 align="center">Тестовое задание 2004</h2>
+<h2 align="center">Лендинг, тестовое задание Яндекс 2004</h2>
 
 <div align="center">
 
