@@ -1,4 +1,5 @@
 import onIntersection from "./onIntersection.js";
+import throttle from "./throttle.js";
 
 const slider = document.querySelector(`[data-slider3]`);
 const slideList = slider.getElementsByClassName("slider3-slide");
@@ -93,8 +94,9 @@ const slider3Control = () => {
   if (!slider || !leftBtn || !rightBtn) {
     return;
   }
+  const onOptimizedScroll = throttle((event) => onScroll(event), 150);
 
-  slider.addEventListener("scroll", (event) => onScroll(event));
+  slider.addEventListener("scroll", (event) => onOptimizedScroll(event));
 
   leftBtn.addEventListener("click", () => onClick(-1));
   rightBtn.addEventListener("click", () => onClick(1));

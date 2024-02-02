@@ -1,4 +1,5 @@
 import Carousel from "./carousel.js";
+import throttle from "./throttle.js";
 
 const slider4Control = () => {
   const container = document.querySelector(`[data-slider4-list]`);
@@ -27,7 +28,9 @@ const slider4Control = () => {
 
   const onClick = (dir) => slider4.changeSlides(dir);
 
-  window.addEventListener("resize", () => slider4.onResize());
+  const onOptimizedResize = throttle(() => slider4.onResize(), 150);
+
+  window.addEventListener("resize", () => onOptimizedResize());
 
   leftBtn.addEventListener("click", () => onClick(-1));
   rightBtn.addEventListener("click", () => onClick(1));
